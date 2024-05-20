@@ -6,7 +6,10 @@ class SpawnerDeMoneda{
   }
   
   public void generarMonedas(){
-    monedas[0] = new Moneda(new PVector(random(width), 0), new PVector(5,20));
+    monedas[0] = new Moneda(new PVector(random(width), 0), new PVector(0,random(25,50)));
+    monedas[2] = new Moneda(new PVector(random(width), 0), new PVector(0,random(25,50)));
+    monedas[3] = new Moneda(new PVector(random(width), 0), new PVector(0,random(25,50)));
+    monedas[1] = new Moneda(new PVector(random(width), 0), new PVector(0,random(25,50)));
   }
   
   public void visualizarMonedas(){

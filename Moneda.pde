@@ -14,8 +14,9 @@ class Moneda extends GameObject{
   }
   
   void mover(int direccion){
-    this.posicion.y+=this.velocidad.y;
-    
+      if(this.posicion.y<(height-100)){
+        this.posicion.y+=this.velocidad.y;
+      }
   }
   
 }
