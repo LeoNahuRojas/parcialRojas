@@ -2,13 +2,11 @@ private SpawnerDeMoneda spawnerDeMoneda;
 private PImage fondo;
 private Personaje p;
 private JoyPad mando;
-//private Moneda m;
 int contador;
 
 void setup(){
   frameRate(24);
   size(928,793);
-  //m = new Moneda();
   fondo = loadImage("Background.png");  
   spawnerDeMoneda = new SpawnerDeMoneda(4);
   spawnerDeMoneda.generarMonedas();
@@ -29,8 +27,7 @@ void draw(){
   if(mando.isRightKey()){
     p.mover(1);
   }
-  
-  //boolean isCollide = spawnerDeMoneda.isCollide(m);
+  isCollide();
 }
 
 void mostrarContador(){
@@ -55,3 +52,19 @@ public void keyReleased(){
     mando.setRightKey(false);
   }
 }
+
+boolean isCollide(){
+    boolean isCollide = false;
+    for (int i = 0; i < 4; i++) {
+      PVector vectorDireccion = PVector.sub(spawnerDeMoneda.monedas[i].getPosicion(), p.getPosicion());
+      float magnitud = vectorDireccion.mag();
+    
+      if(magnitud <= p.getLado() + spawnerDeMoneda.monedas[i].getRadio()){
+        isCollide = true; 
+        println("choque we");
+        contador++;
+        spawnerDeMoneda.monedas[i].setPosicion(new PVector(random(width),0));
+      }
+    }
+    return isCollide;
+  }
