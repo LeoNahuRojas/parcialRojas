@@ -6,7 +6,7 @@ class SpawnerDeMoneda{
   }
   
   public void generarMonedas(){
-    monedas[0] = new Moneda(new PVector(random(width), 0), new PVector(5,5));
+    monedas[0] = new Moneda(new PVector(random(width), 0), new PVector(5,20));
   }
   
   public void visualizarMonedas(){
@@ -20,7 +20,7 @@ class SpawnerDeMoneda{
   public void moverMonedas(int direccion){
     for(Moneda m:monedas){
       if(m != null){
-       // m.mover(direccion);
+        m.mover(direccion);
         
       }
     }

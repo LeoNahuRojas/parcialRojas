@@ -5,6 +5,8 @@ abstract class GameObject{
 
   abstract void display();
   
+  abstract void mover(int direccion);
+  
   public void setPosicion(PVector posicion){
   this.posicion = posicion;
   }

@@ -13,7 +13,8 @@ class Moneda extends GameObject{
     image(this.imagen, this.posicion.x, this.posicion.y, 50, 50);
   }
   
-  void mover(){
+  void mover(int direccion){
+    this.posicion.y+=this.velocidad.y;
     
   }
   
