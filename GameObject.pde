@@ -5,5 +5,22 @@ abstract class GameObject{
 
   abstract void display();
   
+  abstract void mover(int direccion);
   
+  public void setPosicion(PVector posicion){
+  this.posicion = posicion;
+  }
+
+public PVector getPosicion(){
+  return this.posicion;
+  }
+  
+  public void setVelocidad(PVector velocidad){
+  this.velocidad = velocidad;
+  }
+
+public PVector getVelocidad(){
+  return this.velocidad;
+  }
+
 }
